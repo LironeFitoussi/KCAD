@@ -1,0 +1,1 @@
+docker run -e MY_ENV_VAR=myvalue -e MY_ENV_VAR2=myvalue2 lironefitoussi/my-custom-app:latest

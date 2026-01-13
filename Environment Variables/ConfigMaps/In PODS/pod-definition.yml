@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+      envFrom:
+        # If you want to use all the keys from the ConfigMap
+        - configMapRef:
+          name: app-config
+        - configMapKeyRef:
+        # If you want to use a specific key from the ConfigMap
+          name: app-config
+          key: APP_COLOR
