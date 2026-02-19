@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+      env:
+        - name: MY_ENV_VAR
+          value: myvalue
+        - name: MY_ENV_CONFIG_MAP
+          valueFrom:
+            configMapKeyRef:
+              name: myapp-config
+              key: mykey
+        - name: MY_ENV_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: myapp-secret
+              key: mykey
